@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+      text-align: center;
+    }
+    #summaryContainer {
+      margin: 20px auto;
+      padding: 15px;
+      max-width: 600px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      text-align: left;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Summary</h1>
+  <div id="summaryContainer"></div>
+  <button onclick="goBack()">Go Back</button>
+
+  <script>
+    // Fetch the summary from localStorage
+    const summary = localStorage.getItem("summary");
+
+    if (summary) {
+      document.getElementById("summaryContainer").textContent = summary;
+    } else {
+      document.getElementById("summaryContainer").textContent = "No summary available. Please go back and try again.";
+    }
+
+    function goBack() {
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
